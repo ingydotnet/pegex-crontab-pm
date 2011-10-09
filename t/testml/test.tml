@@ -1,0 +1,11 @@
+%TestML 1.0
+
+Plan = 1;
+
+*foo.upper == *bar;
+
+=== Basic
+--- foo
+I like pie!
+--- bar
+I LIKE PIE!
