@@ -9,13 +9,15 @@
 
 use 5.010;
 
+use Mo 0.30 ();
 use Pegex 0.18 ();
+use lexicals 0.21 ();
 
 package Pegex::Crontab;
 use Pegex::Mo;
 extends 'Pegex::Module';
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 use constant receiver => 'Pegex::Crontab::AST';
 
