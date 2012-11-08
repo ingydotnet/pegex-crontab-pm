@@ -1,6 +1,6 @@
 ---
 version: 0.12
-date:    ************ Needs a real test before releasing
+date:    Thu Nov  8 11:07:04 PST 2012
 changes:
 - Use new Pegex
 ---

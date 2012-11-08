@@ -18,7 +18,11 @@ extends 'Pegex::Module';
 
 our $VERSION = '0.12';
 
-use constant receiver => 'Pegex::Crontab::AST';
+use Pegex::Crontab::Grammar;
+use Pegex::Crontab::AST;
+
+has grammar_class => 'Pegex::Crontab::Grammar';
+has receiver_class => 'Pegex::Crontab::AST';
 
 1;
 
