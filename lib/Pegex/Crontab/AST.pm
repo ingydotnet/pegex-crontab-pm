@@ -6,8 +6,8 @@
 # copyright: 2011
 
 package Pegex::Crontab::AST;
-use Pegex::Mo;
-extends 'Pegex::Receiver';
+use Pegex::Base;
+extends 'Pegex::Tree';
 
 use lexicals;
 

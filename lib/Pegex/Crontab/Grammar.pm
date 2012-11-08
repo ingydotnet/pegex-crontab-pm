@@ -6,25 +6,25 @@
 # copyright: 2011
 
 package Pegex::Crontab::Grammar;
-use Mo;
+use Pegex::Base;
 extends 'Pegex::Grammar';
 
-use constant text => '../crontab-pgx/crontab.pgx';
+use constant file => '../crontab-pgx/crontab.pgx';
 
-sub tree {
+sub make_tree {
   {
-    '+top' => 'crontab',
+    '+toprule' => 'crontab',
     'EOL' => {
-      '.rgx' => qr/(?-xism:\G\r?\n)/
+      '.rgx' => qr/\G\r?\n/
     },
     'blank_line' => {
-      '.rgx' => qr/(?-xism:\G[\ \t]*\r?\n)/
+      '.rgx' => qr/\G[\ \t]*\r?\n/
     },
     'command' => {
-      '.rgx' => qr/(?-xism:\G(.*))/
+      '.rgx' => qr/\G(.*)/
     },
     'comment_line' => {
-      '.rgx' => qr/(?-xism:\G[\ \t]*\#.*\r?\n)/
+      '.rgx' => qr/\G[\ \t]*\#.*\r?\n/
     },
     'cron_line' => {
       '.all' => [
@@ -32,31 +32,31 @@ sub tree {
           '.ref' => 'minute'
         },
         {
-          '.rgx' => qr/(?-xism:\G\s+)/
+          '.rgx' => qr/\G\s+/
         },
         {
           '.ref' => 'hour'
         },
         {
-          '.rgx' => qr/(?-xism:\G\s+)/
+          '.rgx' => qr/\G\s+/
         },
         {
           '.ref' => 'dom'
         },
         {
-          '.rgx' => qr/(?-xism:\G\s+)/
+          '.rgx' => qr/\G\s+/
         },
         {
           '.ref' => 'month'
         },
         {
-          '.rgx' => qr/(?-xism:\G\s+)/
+          '.rgx' => qr/\G\s+/
         },
         {
           '.ref' => 'dow'
         },
         {
-          '.rgx' => qr/(?-xism:\G\s+)/
+          '.rgx' => qr/\G\s+/
         },
         {
           '.ref' => 'command'
@@ -84,7 +84,7 @@ sub tree {
       ]
     },
     'day' => {
-      '.rgx' => qr/(?-xism:\G(mon|tue|wed|thu|fri|sat|sun))/
+      '.rgx' => qr/\G(mon|tue|wed|thu|fri|sat|sun)/
     },
     'dom' => {
       '.ref' => 'time'
@@ -98,7 +98,7 @@ sub tree {
           '.ref' => 'variable'
         },
         {
-          '.rgx' => qr/(?-xism:\G=)/
+          '.rgx' => qr/\G=/
         },
         {
           '.ref' => 'value'
@@ -118,7 +118,7 @@ sub tree {
       '.ref' => 'time'
     },
     'number' => {
-      '.rgx' => qr/(?-xism:\G([0-9][0-9]?))/
+      '.rgx' => qr/\G([0-9][0-9]?)/
     },
     'range' => {
       '.all' => [
@@ -126,7 +126,7 @@ sub tree {
           '.ref' => 'number'
         },
         {
-          '.rgx' => qr/(?-xism:\G\-)/
+          '.rgx' => qr/\G\-/
         },
         {
           '.ref' => 'number'
@@ -135,7 +135,7 @@ sub tree {
           '+max' => 1,
           '.all' => [
             {
-              '.rgx' => qr/(?-xism:\G\/)/
+              '.rgx' => qr/\G\//
             },
             {
               '.ref' => 'number'
@@ -145,7 +145,7 @@ sub tree {
       ]
     },
     'star' => {
-      '.rgx' => qr/(?-xism:\G(\*))/
+      '.rgx' => qr/\G(\*)/
     },
     'time' => {
       '.any' => [
@@ -164,10 +164,10 @@ sub tree {
       ]
     },
     'value' => {
-      '.rgx' => qr/(?-xism:\G(.*))/
+      '.rgx' => qr/\G(.*)/
     },
     'variable' => {
-      '.rgx' => qr/(?-xism:\G(\w+))/
+      '.rgx' => qr/\G(\w+)/
     }
   }
 }
