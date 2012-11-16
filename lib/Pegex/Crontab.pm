@@ -28,7 +28,19 @@ has receiver_class => 'Pegex::Crontab::AST';
 
 =head1 SYNOPSIS
 
-    my $data = Pegex::Crontab->parse($json);
+    use Pegex::Crontab;
+
+    $crontabs = Pegex::Crontab->new->parse(
+        "0 5 * * 1 tar -zcf /var/backups/home.tgz /home/" . "\n"
+    );
+
+    use feature qw( say );
+    say $crontabs->[0]->{cmd};  # "tar -zcf /var/backups/home.tgz /home/"
+    say $crontabs->[0]->{min};  # "0"
+    say $crontabs->[0]->{hour}; # "5"
+    say $crontabs->[0]->{dom};  # "*"
+    say $crontabs->[0]->{mon};  # "*"
+    say $crontabs->[0]->{dow};  # "1"
 
 =head1 DESCRIPTION
 
