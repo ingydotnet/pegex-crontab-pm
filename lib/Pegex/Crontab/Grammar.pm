@@ -1,10 +1,3 @@
-##
-# name:      Pegex::Crontab::Grammar
-# abstract:  Pegex Crontab Parser
-# author:    Ingy döt Net <ingy@cpan.org>
-# license:   perl
-# copyright: 2011
-
 package Pegex::Crontab::Grammar;
 use Pegex::Base;
 extends 'Pegex::Grammar';
@@ -16,6 +9,9 @@ sub make_tree {
     '+toprule' => 'crontab',
     'EOL' => {
       '.rgx' => qr/\G\r?\n/
+    },
+    '__' => {
+      '.rgx' => qr/\G\s+/
     },
     'blank_line' => {
       '.rgx' => qr/\G[\ \t]*\r?\n/
@@ -32,31 +28,31 @@ sub make_tree {
           '.ref' => 'minute'
         },
         {
-          '.rgx' => qr/\G\s+/
+          '.ref' => '__'
         },
         {
           '.ref' => 'hour'
         },
         {
-          '.rgx' => qr/\G\s+/
+          '.ref' => '__'
         },
         {
           '.ref' => 'dom'
         },
         {
-          '.rgx' => qr/\G\s+/
+          '.ref' => '__'
         },
         {
           '.ref' => 'month'
         },
         {
-          '.rgx' => qr/\G\s+/
+          '.ref' => '__'
         },
         {
           '.ref' => 'dow'
         },
         {
-          '.rgx' => qr/\G\s+/
+          '.ref' => '__'
         },
         {
           '.ref' => 'command'
@@ -67,7 +63,6 @@ sub make_tree {
       ]
     },
     'crontab' => {
-      '+min' => 0,
       '.any' => [
         {
           '.ref' => 'comment_line'
@@ -145,7 +140,7 @@ sub make_tree {
       ]
     },
     'star' => {
-      '.rgx' => qr/\G(\*)/
+      '.rgx' => qr/\G\*/
     },
     'time' => {
       '.any' => [

@@ -1,22 +1,8 @@
-##
-# name:      Pegex::Crontab
-# abstract:  Pegex Crontab Parser
-# author:    Ingy döt Net <ingy@cpan.org>
-# license:   perl
-# copyright: 2011
-# see:
-# - Pegex
-
-use 5.010;
-
-use Pegex 0.21 ();
-use lexicals 0.21 ();
-
 package Pegex::Crontab;
+our $VERSION = '0.13';
+
 use Pegex::Base;
 extends 'Pegex::Module';
-
-our $VERSION = '0.12';
 
 use Pegex::Crontab::Grammar;
 use Pegex::Crontab::AST;
@@ -25,11 +11,3 @@ has grammar_class => 'Pegex::Crontab::Grammar';
 has receiver_class => 'Pegex::Crontab::AST';
 
 1;
-
-=head1 SYNOPSIS
-
-    my $data = Pegex::Crontab->parse($json);
-
-=head1 DESCRIPTION
-
-Pegex::Crontab is a crontab parser written in Pegex.

@@ -1,10 +1,3 @@
-##
-# name:      Pegex::Crontab::AST
-# abstract:  Pegex Crontab Parser
-# author:    Ingy döt Net <ingy@cpan.org>
-# license:   perl
-# copyright: 2011
-
 package Pegex::Crontab::AST;
 use Pegex::Base;
 extends 'Pegex::Tree';
@@ -30,3 +23,5 @@ sub got_env_line {
     my ($self, $node) = @_;
     env_hash($node);
 }
+
+1;

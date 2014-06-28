@@ -1,4 +1,10 @@
 ---
+version: 0.13
+date:    Fri Jun 27 20:46:40 PDT 2014
+changes:
+- Switch to Zilla-Dist
+- Upgrade grammar to new pegex
+---
 version: 0.12
 date:    Thu Nov  8 11:07:04 PST 2012
 changes:

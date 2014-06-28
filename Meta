@@ -1,0 +1,30 @@
+=meta: 0.0.1
+
+name: Pegex-Crontab
+version: 0.13
+abstract: Pegex Crontab Parser
+homepage: http://pegex.org
+
+license: perl
+copyright: 2011-2014. Ingy döt Net.
+author:
+  name: Ingy döt Net
+  email: ingy@cpan.org
+  github: ingydotnet
+  twitter: ingydotnet
+  freenode: ingy
+  homepage: http://ingy.net
+
+requires:
+  perl: 5.8.1
+  Pegex: 0.30
+  lexicals: 0.21
+
+devel:
+  git: git@github.org/ingydotnet/pegex-crontab-pm
+  irc: irc.freenode.net/pegex
+  bug: https://github.com/ingydotnet/pegex-crontab-pm/issues/
+
+=travis:
+  type: perl
+  irc: irc.freenode.net#pegex
