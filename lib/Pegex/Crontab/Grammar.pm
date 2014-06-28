@@ -63,6 +63,7 @@ sub make_tree {
       ]
     },
     'crontab' => {
+      '+min' => 0,
       '.any' => [
         {
           '.ref' => 'comment_line'
@@ -77,9 +78,6 @@ sub make_tree {
           '.ref' => 'cron_line'
         }
       ]
-    },
-    'day' => {
-      '.rgx' => qr/\G(mon|tue|wed|thu|fri|sat|sun)/
     },
     'dom' => {
       '.ref' => 'time'
@@ -112,51 +110,8 @@ sub make_tree {
     'month' => {
       '.ref' => 'time'
     },
-    'number' => {
-      '.rgx' => qr/\G([0-9][0-9]?)/
-    },
-    'range' => {
-      '.all' => [
-        {
-          '.ref' => 'number'
-        },
-        {
-          '.rgx' => qr/\G\-/
-        },
-        {
-          '.ref' => 'number'
-        },
-        {
-          '+max' => 1,
-          '.all' => [
-            {
-              '.rgx' => qr/\G\//
-            },
-            {
-              '.ref' => 'number'
-            }
-          ]
-        }
-      ]
-    },
-    'star' => {
-      '.rgx' => qr/\G\*/
-    },
     'time' => {
-      '.any' => [
-        {
-          '.ref' => 'star'
-        },
-        {
-          '.ref' => 'number'
-        },
-        {
-          '.ref' => 'range'
-        },
-        {
-          '.ref' => 'day'
-        }
-      ]
+      '.rgx' => qr/\G(\*|(?:[0-9]{1,2})|(?:[0-9]{1,2})\-(?:[0-9]{1,2})(?:\/(?:[0-9]{1,2}))?|(?:mon|tue|wed|thu|fri|sat|sun))/
     },
     'value' => {
       '.rgx' => qr/\G(.*)/

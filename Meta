@@ -1,7 +1,7 @@
 =meta: 0.0.1
 
 name: Pegex-Crontab
-version: 0.13
+version: 0.14
 abstract: Pegex Crontab Parser
 homepage: http://pegex.org
 
@@ -17,8 +17,8 @@ author:
 
 requires:
   perl: 5.8.1
-  Pegex: 0.30
-  lexicals: 0.21
+  Pegex: 0.36
+  lexicals: 0.22
 
 devel:
   git: git@github.org/ingydotnet/pegex-crontab-pm
