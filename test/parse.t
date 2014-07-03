@@ -15,8 +15,8 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 # m h dom mon dow user    command
 17 *  * * *   root    cd / && run-parts --report /etc/cron.hourly
-25 6  * * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
-47 6  * * 7   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+25 0-23/6  * * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+47 6,12,18  * * 7   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
 52 6  1 * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
 #
 ...
@@ -33,5 +33,7 @@ is $data->[2]{min}, 17, 'Parsed min == 17 on first entry';
 is $data->[2]{hour}, '*', 'Parsed hour == * on first entry';
 is $data->[2]{cmd}, 'root    cd / && run-parts --report /etc/cron.hourly',
   'Parsed cmd on first entry';
+is $data->[3]{hour}, '0-23/6', 'Parsed hour == 0-23/6 on second entry';
+is $data->[4]{hour}, '6,12,18', 'Parsed hour == 6,12,18 on third entry';
 
 done_testing;
