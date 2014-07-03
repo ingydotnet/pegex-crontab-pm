@@ -1,7 +1,7 @@
 =meta: 0.0.1
 
 name: Pegex-Crontab
-version: 0.15
+version: 0.16
 abstract: Pegex Crontab Parser
 homepage: http://pegex.org
 
@@ -22,7 +22,7 @@ requires:
 
 devel:
   git: git@github.org/ingydotnet/pegex-crontab-pm
-  irc: irc.freenode.net/pegex
+  irc: irc.freenode.net#pegex
   bug: https://github.com/ingydotnet/pegex-crontab-pm/issues/
 
 =travis:
