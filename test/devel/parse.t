@@ -4,7 +4,8 @@ use YAML::XS;
 use IO::All;
 # use XXX;
 
-my $got = YAML::XS::Dump(Pegex::Crontab->new->parse(io('xt/crontab')->all));
+my $xt = -e 'xt' ? 'xt' : 'test/devel';
+my $got = YAML::XS::Dump(Pegex::Crontab->new->parse(io("$xt/crontab")->all));
 my $expect = <<'...';
 ---
 - cmd: tar -zcf /var/backups/home.tgz /home/
