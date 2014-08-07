@@ -1,4 +1,9 @@
 ---
+version: 0.18
+date:    Thu Aug  7 16:29:05 PDT 2014
+changes:
+- Fix the test/devel / xt tests
+---
 version: 0.17
 date:    Mon Aug  4 01:20:39 PDT 2014
 changes:
