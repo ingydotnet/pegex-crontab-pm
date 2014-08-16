@@ -1,5 +1,5 @@
 package Pegex::Crontab;
-our $VERSION = '0.20';
+our $VERSION = '0.21';
 
 use Pegex::Base;
 extends 'Pegex::Module';
