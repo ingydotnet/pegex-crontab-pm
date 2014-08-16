@@ -34,7 +34,7 @@ Pegex::Crontab - Pegex crontab Parser
 
 Pegex::Crontab is a crontab parser written in Pegex.
 
-=head1 SEE
+=head1 SEE ALSO
 
 =over
 

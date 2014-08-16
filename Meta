@@ -1,7 +1,7 @@
 =meta: 0.0.2
 
 name: Pegex-Crontab
-version: 0.22
+version: 0.23
 abstract: Pegex Crontab Parser
 homepage: http://pegex.org
 language: perl
