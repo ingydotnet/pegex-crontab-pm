@@ -1,4 +1,9 @@
 ---
+version: 0.20
+date:    Fri Aug 15 21:24:30 PDT 2014
+changes:
+- Remove t/use_ok.t
+---
 version: 0.19
 date:    Fri Aug 15 20:21:20 PDT 2014
 changes:
